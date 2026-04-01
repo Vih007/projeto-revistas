@@ -1,125 +1,189 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Revistas com Iframe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindos ao Mundo Monster High</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0a011a; /* Roxo ultra escuro para profundidade */
+            color: #f1f1f1;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+        }
 
-    table {
-      border-collapse: collapse;
-    }
+        /* Cabeçalho com gradiente da marca */
+        header {
+            background: linear-gradient(180deg, #1c022f 0%, #a862b5 60%, #e793fc 100%);
+            padding: 60px 20px;
+            border-bottom: 5px solid #ff00ff;
+            box-shadow: 0 4px 15px rgba(255, 0, 255, 0.5);
+        }
 
-    .main-layout {
-      width: 100%;
-      height: 100vh;
-    }
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin: 0;
+            color: #fff;
+            text-shadow: 4px 4px 0px #ff00ff, 6px 6px 0px #000;
+        }
 
-    .sidebar {
-      background-color: #1c022f;
-      color: white;
-      width: 250px;
-      vertical-align: top;
-      padding: 20px;
-      box-sizing: border-box;
-    }
+        header p {
+            color: #000;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+        }
 
-    .sidebar h1 {
-      text-align: center;
-      font-size: 24px;
-      margin-bottom: 30px;
-    }
-    .menu {
-      width: 100%;
-      text-align: center;
-    }
-    .menu a {
-      display: block;
-      background-color: #e793fc;
-      color: black;
-      text-decoration: none;
-      padding: 12px 0;
-      margin: 5px auto;
-      width: 90%;
-      text-align: center;
-      border: 1px solid rgb(234, 222, 222);
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-      font-weight: bold;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
 
-    .menu a:hover {
-      background-color: #9c74fb;
-    }
+        /* Título da seção de personagens */
+        h2.section-title {
+            font-family: 'Playfair Display', serif;
+            color: #e793fc;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px #000;
+            margin-bottom: 40px;
+        }
 
-    .content {
-      background: linear-gradient(to bottom, #ccc, #888);
-      text-align: center;
-    }
+        /* Container flexível para os cards */
+        .characters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
 
-    .iframe-wrapper {
-      margin: 30px auto;
-      border: 4px solid rgb(0, 0, 0);
-      background-color: rgb(249, 244, 244);
-      width: 350px;
-    }
+        /* Estilo para cada card de personagem */
+        .char-card {
+            background: #1c022f; /* Roxo escuro */
+            border: 4px solid #e793fc; /* Roxo claro */
+            border-radius: 15px;
+            padding: 0; /* Removendo padding para a imagem ocupar a largura total */
+            width: 320px; /* Aumentando um pouco o card */
+            overflow: hidden; /* Garante que a imagem e bordas arredondadas funcionem */
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+        }
 
-    .iframe-wrapper thead th {
-      background-color: rgb(114, 26, 122);
-      color: white;
-      font-size: 22px;
-      padding: 10px 0;
-      border: 1px solid rgb(240, 240, 240);
-    }
+        /* Efeito de hover (passar o mouse) */
+        .char-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: #2d044a;
+            box-shadow: 0 10px 30px rgba(231, 147, 252, 0.4);
+        }
 
-    .iframe-wrapper iframe {
-      width: 100%;
-      height: 560px;
-      border: none;
-      
-    }
+        /* ESTILO PARA AS FOTOS */
+        .char-card img {
+            width: 100%; /* Imagem ocupa toda a largura do card */
+            height: 250px; /* Altura fixa para uniformidade */
+            object-fit: cover; /* Recorta a imagem para preencher o espaço sem distorcer */
+            border-bottom: 4px solid #e793fc; /* Borda divisória entre foto e texto */
+        }
 
-  </style>
+        /* Container interno para o texto do card */
+        .char-info {
+            padding: 20px;
+        }
+
+        .char-info h3 {
+            color: #e793fc;
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .char-info p {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #ddd;
+            margin: 0;
+        }
+
+        /* O Botão para a página de revistas */
+        .btn-revistas {
+            display: inline-block;
+            background-color: #ff00ff; /* Rosa choque */
+            color: white;
+            text-decoration: none;
+            padding: 20px 50px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            border: 5px solid #fff;
+            border-radius: 50px;
+            box-shadow: 0 0 25px #ff00ff;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Hover do Botão */
+        .btn-revistas:hover {
+            background-color: #e793fc; /* Roxo claro */
+            box-shadow: 0 0 40px #e793fc;
+            transform: scale(1.1) translateY(-3px);
+            color: #1c022f;
+        }
+
+        /* Linha divisória temática */
+        .divider {
+            border: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1c022f, #ff00ff, #1c022f);
+            margin: 50px 0;
+        }
+    </style>
 </head>
 <body>
-  <table class="main-layout">
-    <tr>
-      <td class="sidebar">
-        <h1>Frame 1</h1>
-        <table class="menu">
-          <tr><td><a href="revistas/revista1.html" target="revista">Primeira Revista</a></td></tr>
-          <tr><td><a href="revistas/revista2.html" target="revista">Segunda Revista</a></td></tr>
-          <tr><td><a href="revistas/revista3.html" target="revista">Terceira Revista</a></td></tr>
-          <tr><td><a href="revistas/revista4.html" target="revista">Quarta Revista</a></td></tr>
-          <tr><td><a href="revistas/revista5.html" target="revista">Quinta Revista</a></td></tr>
-          <tr><td><a href="revistas/revista6.html" target="revista">Sexta Revista</a></td></tr>
-          <tr><td><a href="revistas/revista7.html" target="revista">Sétima Revista</a></td></tr>
-          <tr><td><a href="revistas/revista8.html" target="revista">Oitava Revista</a></td></tr>
-          <tr><td><a href="revistas/revista9.html" target="revista">Nona Revista</a></td></tr>
-        </table>
-      </td>
-      <td class="content">
-        <table class="iframe-wrapper">
-          <thead>
-            <tr><th>Revistas</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <iframe name="revista" src="capa.html" ></iframe>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-  </table>
+
+    <header>
+        <h1>Bem-vindos ao Mundo Monster High!</h1>
+        <img src="monster/image-removebg-preview.png" alt="Logo Monster High" style="width: 120px; margin-top: 20px;">
+        <p>Onde as imperfeições são perfeitas e a moda é de matar.</p>
+        
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Nossas Ghouls Estilosas</h2>
+        
+        <div class="characters">
+            <div class="char-card">
+                <img src="monster/frann.jpg" alt="Frankie Stein">
+                <div class="char-info">
+                    <h3>Frankie Stein</h3>
+                    <p>Eletrizante! Ela adora moda e tem um estilo que une costuras e parafusos de forma única.</p>
+                </div>
+            </div>
+            
+            <div class="char-card">
+                <img src="monster/dra.jpg" alt="Draculaura">
+                <div class="char-info">
+                    <h3>Draculaura</h3>
+                    <p>Uma ghoul de coração doce! Ama rosa choque e é conhecida por sua paixão por moda fangtástica.</p>
+                </div>
+            </div>
+            
+            <div class="char-card">
+                <img src="monster/clau1.jpg" alt="Clawdeen Wolf">
+                <div class="char-info">
+                    <h3>Clawdeen Wolf</h3>
+                    <p>Ferozmente fashion! Ela domina as passarelas e está sempre à frente nas tendências de estilo monstro.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <a href="revistas.html" class="btn-revistas">VEJA NOSSAS REVISTAS ➔</a>
+    </div>
+
 </body>
 </html>
-
-
