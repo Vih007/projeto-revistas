@@ -1,125 +1,110 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Revistas com Iframe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Playfair Display', serif;
-    }
-
-    table {
-      border-collapse: collapse;
-    }
-
-    .main-layout {
-      width: 100%;
-      height: 100vh;
-    }
-
-    .sidebar {
-      background-color: #1c022f;
-      color: white;
-      width: 250px;
-      vertical-align: top;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .sidebar h1 {
-      text-align: center;
-      font-size: 24px;
-      margin-bottom: 30px;
-    }
-    .menu {
-      width: 100%;
-      text-align: center;
-    }
-    .menu a {
-      display: block;
-      background-color: #e793fc;
-      color: black;
-      text-decoration: none;
-      padding: 12px 0;
-      margin: 5px auto;
-      width: 90%;
-      text-align: center;
-      border: 1px solid rgb(234, 222, 222);
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-      font-weight: bold;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-    }
-
-    .menu a:hover {
-      background-color: #9c74fb;
-    }
-
-    .content {
-      background: linear-gradient(to bottom, #ccc, #888);
-      text-align: center;
-    }
-
-    .iframe-wrapper {
-      margin: 30px auto;
-      border: 4px solid rgb(0, 0, 0);
-      background-color: rgb(249, 244, 244);
-      width: 350px;
-    }
-
-    .iframe-wrapper thead th {
-      background-color: rgb(114, 26, 122);
-      color: white;
-      font-size: 22px;
-      padding: 10px 0;
-      border: 1px solid rgb(240, 240, 240);
-    }
-
-    .iframe-wrapper iframe {
-      width: 100%;
-      height: 560px;
-      border: none;
-      
-    }
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revistas Monster High - Oficial</title>
+    <link rel="icon" type="image/png" href="monster/caveira.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/revistas.css">
 </head>
 <body>
-  <table class="main-layout">
-    <tr>
-      <td class="sidebar">
-        <h1>Frame 1</h1>
-        <table class="menu">
-          <tr><td><a href="revistas/revista1.html" target="revista">Primeira Revista</a></td></tr>
-          <tr><td><a href="revistas/revista2.html" target="revista">Segunda Revista</a></td></tr>
-          <tr><td><a href="revistas/revista3.html" target="revista">Terceira Revista</a></td></tr>
-          <tr><td><a href="revistas/revista4.html" target="revista">Quarta Revista</a></td></tr>
-          <tr><td><a href="revistas/revista5.html" target="revista">Quinta Revista</a></td></tr>
-          <tr><td><a href="revistas/revista6.html" target="revista">Sexta Revista</a></td></tr>
-          <tr><td><a href="revistas/revista7.html" target="revista">Sétima Revista</a></td></tr>
-          <tr><td><a href="revistas/revista8.html" target="revista">Oitava Revista</a></td></tr>
-          <tr><td><a href="revistas/revista9.html" target="revista">Nona Revista</a></td></tr>
-        </table>
-      </td>
-      <td class="content">
-        <table class="iframe-wrapper">
-          <thead>
-            <tr><th>Revistas</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <iframe name="revista" src="capa.html" ></iframe>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </td>
-    </tr>
-  </table>
+
+    <header class="main-header">
+        <h1>Capas Icônicas</h1>
+        <a href="index.html" class="back-link">← Voltar</a>
+    </header>
+
+    <div class="layout-container">
+        <nav class="sidebar">
+            <h2>Edições</h2>
+            <ul>
+                <li><a href="#capa">Início</a></li>
+                <li><a href="#revista1">1ª Revista</a></li>
+                <li><a href="#revista2">2ª Revista</a></li>
+                <li><a href="#revista3">3ª Revista</a></li>
+                <li><a href="#revista4">4ª Revista</a></li>
+                <li><a href="#revista5">5ª Revista</a></li>
+                <li><a href="#revista6">6ª Revista</a></li>
+                <li><a href="#revista7">7ª Revista</a></li>
+                <li><a href="#revista8">8ª Revista</a></li>
+                <li><a href="#revista9">9ª Revista</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <section id="capa" class="revista-section">
+                <div class="card-content">
+                    <img src="revistas/imagens/principal.jpeg" alt="Banner Principal Monster High" class="img-destaque">
+                    <h2>Explore nossa Galeria de Capas!</h2>
+                    <p>Este espaço foi criado para reunir as artes das edições que marcaram época em Monster High. Clique nas edições ao lado para relembrar os visuais e as histórias que abalaram a escola!</p>
+                </div>
+            </section>
+
+            <section id="revista1" class="revista-section">
+                <div class="card-content">
+                    <img src="revistas/imagens/capa1.png" alt="Capa da Edição 1" class="img-revista">
+                    <p>Uma aventura eletrizante com Frankie Stein e suas amigas!</p>
+                </div>
+            </section>
+
+            <section id="revista2" class="revista-section">
+                <div class="card-content">
+                    <img src="revistas/imagens/capa2.webp" alt="Capa da Edição 2" class="img-revista">
+                    <p>Draculaura compartilha seus segredos de moda de matar.</p>
+                </div>
+            </section>
+
+            <section id="revista3" class="revista-section">
+                <div class="card-content">
+                    <img src="revistas/imagens/capa3.png" alt="Capa da Edição 3" class="img-revista">
+                    <p>Clawdeen Wolf compartilha suas experiências em eventos de moda.</p>
+                </div>
+            </section>
+
+            <section id="revista4" class="revista-section">
+                <div class="card-content">
+                    <img src="revistas/imagens/capa4.jpg" alt="Capa da Edição 4" class="img-revista">
+                    <p>Uma edição especial com as ghouls mais estilosas da escola!</p>
+                </div>
+            </section>
+
+            <section id="revista5" class="revista-section">
+                <div class="card-content">
+                    <img src="revistas/imagens/capa5.webp" alt="Capa da Edição 5" class="img-revista">
+                    <p>Descubra os bastidores das festas mais incríveis de Monster High!</p>
+                </div>
+            </section>
+
+            <section id="revista6" class="revista-section">
+                <div class="card-content">
+                    <img src="revistas/imagens/capa6.jpeg" alt="Capa da Edição 6" class="img-revista">
+                    <p>As ghouls enfrentam desafios assustadores com muito estilo!</p>
+                </div>
+            </section>
+
+            <section id="revista7" class="revista-section">
+                <div class="card-content">
+                    <img src="revistas/imagens/capa7.jpg" alt="Capa da Edição 7" class="img-revista">
+                    <p>Uma edição especial dedicada às ghouls mais fashionistas!</p>
+                </div>
+            </section>
+
+            <section id="revista8" class="revista-section">
+                <div class="card-content">
+                    <img src="revistas/imagens/capa8.jpeg" alt="Capa da Edição 8" class="img-revista">
+                    <p>As ghouls enfrentam um mistério fashion que vai abalar a escola!</p>
+                </div>
+            </section>
+
+            <section id="revista9" class="revista-section">
+                <div class="card-content">
+                    <img src="revistas/imagens/capa9.jpg" alt="Capa da Edição 9" class="img-revista">
+                    <p>O encerramento da temporada com estilo feroz!</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
 </body>
 </html>
-
-
